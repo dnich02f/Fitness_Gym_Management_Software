@@ -37,7 +37,7 @@ class Exercise(models.Model):
         return self.name
 
 
-class Set(models.Model):
+class ExerciseSet(models.Model):
     workout = models.ForeignKey(Workout, on_delete=models.CASCADE)
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
     order = models.PositiveIntegerField()
@@ -49,7 +49,7 @@ class Set(models.Model):
 
 
 class Repetition(models.Model):
-    set = models.ForeignKey(Set, on_delete=models.CASCADE)
+    set = models.ForeignKey(ExerciseSet, on_delete=models.CASCADE)
     order = models.PositiveIntegerField()
     weight = models.DecimalField(max_digits=10, decimal_places=2)
     repetitions = models.PositiveIntegerField()
