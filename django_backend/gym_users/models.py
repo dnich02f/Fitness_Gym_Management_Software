@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-from django_backend.gym_management.models import Membership
+from gym_management.models import Membership
 
 
 class UserProfile(models.Model):
@@ -18,7 +17,7 @@ class UserMembership(models.Model):
     membership = models.ForeignKey(Membership, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.user.username} - {self.membership.gym.name} - {self.membership.membership_offer.name}"
+        return f"{self.user.username}"
 
 
 class Workout(models.Model):

@@ -8,6 +8,9 @@ ENV PYTHONUNBUFFERED 1
 # Set the working directory
 WORKDIR /app/backend
 
+# Set PYTHONPATH
+ENV PYTHONPATH=/app/backend:/app/backend/django_backend
+
 # Copy the requirements file into the container
 COPY django_backend/requirements.txt .
 

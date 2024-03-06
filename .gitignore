@@ -4,7 +4,8 @@ backend/__pycache__/
 *.sqlite3
 *.pyo
 *.pyd
-.env
+*.idea
+env
 
 # Node.js
 /node_modules

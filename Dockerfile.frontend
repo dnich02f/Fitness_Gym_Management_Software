@@ -5,14 +5,13 @@ FROM node:21
 ENV NODE_ENV=development
 
 # Set the working directory
-WORKDIR /app/frontend
-
-# Install dependencies
-COPY react_frontend/frontend/package.json react_frontend/frontend/package-lock.json ./
-RUN npm install
+WORKDIR /app/react_frontend/frontend
 
 # Copy the frontend code into the container
 COPY react_frontend/frontend .
+
+# Install dependencies
+RUN npm install
 
 # Expose port 3000 to allow communication to/from the React application
 EXPOSE 3000
