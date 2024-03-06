@@ -128,7 +128,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    "/react_frontend/frontend/build/static",
+    '/app/frontend/static',
 ]
 
 # Default primary key field type

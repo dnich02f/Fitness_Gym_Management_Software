@@ -20,6 +20,10 @@ RUN pip install -r requirements.txt
 # Copy the backend code into the container
 COPY . .
 
+# Copy the frontend static files into the container
+COPY ../../react_frontend/frontend/build/static /app/frontend/static
+
+
 # Expose port 8000 to allow communication to/from the Django application
 EXPOSE 8000
 
