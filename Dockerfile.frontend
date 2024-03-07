@@ -5,10 +5,10 @@ FROM node:21
 ENV NODE_ENV=development
 
 # Set the working directory
-WORKDIR /app/react_frontend/frontend
+WORKDIR /app/react_frontend/frontend_nextjs
 
 # Copy the frontend code into the container
-COPY react_frontend/frontend .
+COPY react_frontend/frontend_nextjs .
 
 # Install dependencies
 RUN npm install
@@ -17,4 +17,4 @@ RUN npm install
 EXPOSE 3000
 
 # Command to start the React development server
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
