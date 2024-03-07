@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  backend:
+ backend:
     build:
       context: .
       dockerfile: Dockerfile.backend
@@ -12,8 +12,10 @@ services:
     volumes:
       - ./django_backend:/app/backend
     command: python manage.py runserver 0.0.0.0:8000
+    networks:
+      - main
 
-  frontend:
+ frontend:
     build:
       context: .
       dockerfile: Dockerfile.frontend
@@ -24,3 +26,9 @@ services:
     command: npm run dev
     depends_on:
       - backend
+    networks:
+      - main
+
+networks:
+ main:
+   driver: bridge
