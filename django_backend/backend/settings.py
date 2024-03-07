@@ -29,8 +29,6 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend', 'frontend']
 
 CORS_ALLOWED_ORIGINS = (
     'http://localhost:3000',  # Adjust this to match your frontend URL
-    'http://localhost:',
-    'http://127.0.0.1',
     'http://backend',
 )
 
