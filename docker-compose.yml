@@ -20,7 +20,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./react_frontend:/app/frontend
-    command: npm start
+      - ./nextjs_frontend:/app/frontend
+    command: npm run dev
     depends_on:
       - backend
