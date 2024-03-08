@@ -1,4 +1,6 @@
 // pages/gym_management/index.js
+"use client"
+
 import React from 'react';
 
 const GymManagementIndex = ({ gyms }) => {
