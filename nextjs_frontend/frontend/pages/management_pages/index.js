@@ -1,4 +1,3 @@
-// pages/gym_management/index.js
 import React from 'react';
 
 const GymManagementIndex = ({ gyms }) => {
@@ -20,31 +19,25 @@ const GymManagementIndex = ({ gyms }) => {
 };
 
 export async function getServerSideProps() {
- // Define the URLs to try fetching from
- const urls = [
-   'http://backend:8000/api/gym_management/gyms/',
- ];
+ // Define the URL to fetch from
+ const url = 'http://backend:8000/api/gym_management/gyms/';
 
  let gyms = [];
  let fetchSuccess = false;
 
- // Try fetching from each URL until successful
- for (const url of urls) {
-   try {
-     const response = await fetch(url);
-     if (response.ok) {
-       gyms = await response.json();
-       fetchSuccess = true;
-       break; // Exit the loop if fetch is successful
-     }
-   } catch (error) {
-     console.error(`Failed to fetch from ${url}:`, error);
+ try {
+   const response = await fetch(url);
+   if (response.ok) {
+     gyms = await response.json();
+     fetchSuccess = true;
    }
+ } catch (error) {
+   console.error(`Failed to fetch from ${url}:`, error);
  }
 
  // If fetching failed, use the static list of gyms
  if (!fetchSuccess) {
-   console.error('Failed to fetch gyms data from any URL. Using static data.');
+   console.error('Failed to fetch gyms data from the URL. Using static data.');
    gyms = [
      {
        id: 1,
