@@ -1,13 +1,11 @@
-import Navigation from '../components/navigation';
-
-
+import dashboard from "@/components/dashboard";
+import Dashboard from "@/components/dashboard";
 export default function Home() {
   return (
       <>
-        <nav><Navigation/></nav>
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
           <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-            Fitness Software
+            <Dashboard />
           </div>
         </main>
     </>

@@ -2,10 +2,15 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link';
+import Image from 'next/image/';
+import { useState, useEffect } from 'react';
+import {signIn, signOut, useSession, getProviders } from 'next-auth/react';
+
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
+  { name: 'Dashboard', href: '/', current: true },
+  { name: 'Staff', href: '/staff/', current: false },
   { name: 'Projects', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
 ]
@@ -44,7 +49,7 @@ export default function Navigation() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                        <Link
                         key={item.name}
                         href={item.href}
                         className={classNames(
@@ -54,7 +59,7 @@ export default function Navigation() {
                         aria-current={item.current ? 'page' : undefined}
                       >
                         {item.name}
-                      </a>
+                    </Link>
                     ))}
                   </div>
                 </div>
