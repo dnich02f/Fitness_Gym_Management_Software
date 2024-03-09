@@ -1,6 +1,5 @@
 "use client"
 import React from 'react';
-import MembershipGrowthLineChart from './MembershipGrowthLineChart'; // Adjust the path as necessary
 
 const Dashboard = () => {
  // Fetch data from your backend (e.g., using useEffect and fetch API)
